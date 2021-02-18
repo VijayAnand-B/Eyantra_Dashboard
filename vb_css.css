@@ -1,32 +1,4 @@
 /* --------------------- JS script ------------------------------*/
-#table1 {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-  text-align: center;
-}
-
-#table1 td,
-#table1 th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-#table1 tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-#table1 tr:hover {
-  background-color: #ddd;
-}
-
-#table1 th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: center;
-  background-color: #4caf50;
-  color: white;
-}
 
 .info {
   padding: 6px 8px;
@@ -55,12 +27,11 @@
 }
 
 .logo {
-  width: 100px;
-  object-fit: contain;
-  margin: 0 10px;
-  margin-top: 7px;
+  width: 300px;
+  /* object-fit: contain; */
+  margin-top: 10px;
   margin-left: 10px;
-  height: auto;
+  height: 40px;
 }
 
 .container {
@@ -74,11 +45,18 @@
 
 .navbar-text1 {
   color: #fff;
+  font-family: Lato, Lucida Grande, Lucida Sans Unicode, Tahoma, Sans-Serif;
 
-  font-size: 40px;
+  font-size: 35px;
   display: inline-block;
-  align-items: center;
+  margin-top: 7px;
+
+  margin-left: 600px;
   width: 60%;
+}
+
+.block {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .navbar-text2 {
@@ -88,6 +66,8 @@
   padding-top: 0.7rem;
   padding-bottom: 0.2rem;
   padding-right: 0.5rem;
+  margin-left: 800px;
+  font-family: Lato, Lucida Grande, Lucida Sans Unicode, Tahoma, Sans-Serif;
 
   font-size: 25px;
 }
@@ -95,18 +75,61 @@
 body {
   margin: 0;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
   color: #212529;
   text-align: left;
   background-color: #fff;
 }
 
-#map {
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-bottom: 15px;
-  height: 380px;
-  width: 20%;
+.map {
+  margin-top: 30px;
+  margin-left: 160px;
+  height: 400px;
+  width: 600px;
+}
+
+.column_chart {
+  margin-top: 30px;
+  margin-left: 140px;
+  height: 400px;
+  width: 1000px;
+}
+
+.table1 {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+
+.table1 td {
+  border: 1px solid #f2f2f2;
+  padding: 8px;
+}
+.table1 th {
+  border: 1px solid #343a40;
+  padding: 8px;
+}
+
+.table1 tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table1 tr:hover {
+  background-color: #ddd;
+}
+
+.table1 th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #343a40 !important;
+  color: white;
+}
+
+.table {
+  margin-top: 70px;
+  margin-left: 10%;
+  width: 80%;
 }

@@ -106,46 +106,28 @@ function refreshMap() {
           // Attach the corresponding JSON data to your marker:
           marker.myJsonData = jsonDataObject[j];
           function set_marker_color(dis_status, ship_status) {
-            var redIcon = new L.Icon({
-              iconUrl:
-                "https://github.com/pointhi/leaflet-color-markers/blob/master/img/marker-icon-red.png?raw=true",
-              shadowUrl:
-                "https://github.com/pointhi/leaflet-color-markers/blob/master/img/marker-shadow.png?raw=true",
-              iconSize: [25, 41],
-              iconAnchor: [12, 41],
-              popupAnchor: [1, -34],
-              shadowSize: [41, 41],
-            });
-
-            var greenIcon = new L.Icon({
-              iconUrl:
-                "https://github.com/pointhi/leaflet-color-markers/blob/master/img/marker-icon-green.png?raw=true",
-              shadowUrl:
-                "https://github.com/pointhi/leaflet-color-markers/blob/master/img/marker-shadow.png?raw=true",
-              iconSize: [25, 41],
-              iconAnchor: [12, 41],
-              popupAnchor: [1, -34],
-              shadowSize: [41, 41],
-            });
-
-            var yellowIcon = new L.Icon({
-              iconUrl:
-                "https://github.com/pointhi/leaflet-color-markers/blob/master/img/marker-icon-yellow.png?raw=true",
-              shadowUrl:
-                "https://github.com/pointhi/leaflet-color-markers/blob/master/img/marker-shadow.png?raw=true",
-              iconSize: [25, 41],
-              iconAnchor: [12, 41],
-              popupAnchor: [1, -34],
-              shadowSize: [41, 41],
-            });
+            var str1 =
+              "https://github.com/pointhi/leaflet-color-markers/blob/master/img/marker-icon-";
+            var str2 = ".png?raw=true";
+            var str3 = "";
 
             if (dis_status == "YES" && ship_status == "YES") {
-              return greenIcon;
+              str3 = str1.concat("green", str2);
             } else if (dis_status == "YES" && ship_status == "NO") {
-              return yellowIcon;
+              str3 = str1.concat("yellow", str2);
             } else {
-              return redIcon;
+              str3 = str1.concat("red", str2);
             }
+            var colorIcon = new L.Icon({
+              iconUrl: str3,
+              shadowUrl:
+                "https://github.com/pointhi/leaflet-color-markers/blob/master/img/marker-shadow.png?raw=true",
+              iconSize: [25, 41],
+              iconAnchor: [12, 41],
+              popupAnchor: [1, -34],
+              shadowSize: [41, 41],
+            });
+            return colorIcon;
           }
 
           // var info = L.control();
