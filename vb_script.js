@@ -98,9 +98,9 @@ function refreshMap() {
               ),
             }
           );
-          marker.bindPopup(jsonDataObject[j].City, {
-            autoClose: true,
-          });
+          // marker.bindPopup({
+          //   autoClose: true,
+          // });
           map.addLayer(marker);
           marker.on("click", onClick_Marker);
           // Attach the corresponding JSON data to your marker:
@@ -171,16 +171,25 @@ function refreshMap() {
 
             // method that we will use to update the control based on feature properties passed
             info.update = function () {
-              this._div.innerHTML = "<h4>US Population Density</h4>";
+              var marker = e.target;
+              this._div.innerHTML =
+                "<h4> " +
+                marker.myJsonData.City +
+                "</h4>" +
+                "Order ID : " +
+                marker.myJsonData.OderID +
+                "</b><br/>" +
+                "Item :  " +
+                marker.myJsonData.Item;
             };
             info.addTo(map);
 
             // function onClick_Marker(e) {
-            var marker = e.target;
+            // var marker = e.target;
             // info.onRemove(map);
 
             info.update();
-            info.onRemove(map);
+            info.onRemove();
           }
 
           // function resetHighlight(e) {
@@ -237,7 +246,6 @@ function refreshChart() {
       var data = new google.visualization.DataView(graphArray_Final);
 
       var options = {
-        title: "Time Taken for items to be Shipped",
         hAxis: { title: "Order ID" },
         vAxis: { title: "Time Taken (s)" },
         legend: { position: "none" },

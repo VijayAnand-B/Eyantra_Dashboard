@@ -1,12 +1,13 @@
 /* --------------------- JS script ------------------------------*/
 
 .info {
-  padding: 6px 8px;
+  /* padding: 2px 2px; */
+  width: 150px;
   font: 14px/16px Arial, Helvetica, sans-serif;
   background: white;
   background: rgba(255, 255, 255, 0.8);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .graph_arr {
@@ -18,7 +19,7 @@
   border-radius: 5px;
 }
 .info h4 {
-  margin: 0 0 5px;
+  margin: 0 0 10px;
   color: #777;
 }
 
@@ -31,56 +32,88 @@
 
   width: 100%;
 
-  background-color: #343a40 !important;
+  background-color: #e7e6e1 !important;
   position: sticky; /*sticks to top if we scroll down*/
 }
 
 .logo {
-  width: 300px;
+  width: 180px;
   /* object-fit: contain; */
   margin-top: 10px;
   margin-left: 10px;
   height: 40px;
+  background-color: #ebebeb;
 }
 
 .container {
   margin-top: 10px;
 }
+
+h1.page-heading {
+  font-size: 1.7em;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  margin-bottom: 1px;
+  font-family: "Lato", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  margin-left: 80px;
+  width: 675px;
+  color: #00b5ad;
+}
+
+.time_taken {
+  margin-top: 30px;
+  margin-left: 760px;
+
+  font-size: 1.3em;
+  font-family: "Lato", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  width: 10px;
+  color: #474747;
+}
+.map_name {
+  margin-top: 30px;
+  padding-left: 50px;
+  font-size: 1.3em;
+  padding: 10px 0;
+  margin-bottom: 1px;
+  font-family: "Lato", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  margin-left: 80px;
+  width: 10px;
+  color: #474747;
+}
+.orders {
+  margin-top: 30px;
+
+  font-size: 1.3em;
+  padding: 10px 0;
+  margin-bottom: 1px;
+  font-family: "Lato", "Helvetica Neue", Arial, Helvetica, sans-serif;
+
+  width: 1000px;
+  color: #474747;
+  border-bottom: 1px solid #ddd;
+}
+
 .row {
   width: 97%;
+  margin-bottom: 20px;
 
   display: flex;
 }
-
-.navbar-text1 {
-  color: #f0f1f6;
-  font-family: Lato, Lucida Grande, Lucida Sans Unicode, Tahoma, Sans-Serif;
-
-  font-size: 35px;
-  display: inline-block;
-  margin-top: 7px;
-
-  margin-left: 600px;
-  width: 60%;
-}
-
 .block {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.navbar-text2 {
-  color: rgba(255, 255, 255, 0.5);
-  display: flex-end;
-  width: 10%;
-  padding-top: 0.7rem;
-  padding-bottom: 0.2rem;
-  padding-right: 0.5rem;
-  margin-left: 800px;
-  font-family: Lato, Lucida Grande, Lucida Sans Unicode, Tahoma, Sans-Serif;
+.user {
+  margin-top: 5px;
 
-  font-size: 25px;
+  font-size: 1.05em;
+  padding: 10px;
 }
-
+.user_img {
+  margin-left: 1575px;
+  margin-top: 11px;
+  height: 30px;
+}
 body {
   margin: 0;
   font-size: 1rem;
@@ -88,19 +121,45 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #f0f1f6;
+  background-color: #ffffff;
+}
+
+.search {
+  margin-top: 50px;
+  margin-left: 850px;
+  height: 20%;
+
+  line-height: 36px;
+  padding: 0 12px;
+  border-radius: 4px;
+  transition: all 0.1s;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 2px solid #e9f2f9;
+  width: 250px;
+  font-size: 18px;
+  font-family: rubik;
+  outline: none;
+  font-family: "Lato", "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.search_img {
+  width: 17px;
+  position: absolute;
+  top: 124px;
+  right: 65px;
 }
 
 #map {
-  margin-top: 30px;
-  margin-left: 160px;
+  margin-top: 15px;
+  margin-left: 80px;
   height: 400px;
-  width: 600px;
+  width: 700px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #column_chart {
-  margin-top: 30px;
+  margin-top: 15px;
   margin-left: 140px;
   height: 400px;
   width: 1000px;
@@ -110,8 +169,10 @@ body {
 .table1 {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 1500px;
   text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 .table1 td {
@@ -119,7 +180,7 @@ body {
   padding: 8px;
 }
 .table1 th {
-  border: 1px solid #343a40;
+  border: 1px solid #00b5ad;
   padding: 8px;
 }
 
@@ -135,12 +196,12 @@ body {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
-  background-color: #343a40 !important;
+  background-color: #00b5ad !important;
   color: white;
 }
 
 .table {
   margin-top: 70px;
   margin-left: 10%;
-  width: 80%;
+  /* width: 1500px; */
 }
