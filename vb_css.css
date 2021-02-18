@@ -1,3 +1,4 @@
+/* --------------------- JS script ------------------------------*/
 #table1 {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -25,4 +26,87 @@
   text-align: center;
   background-color: #4caf50;
   color: white;
+}
+
+.info {
+  padding: 6px 8px;
+  font: 14px/16px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+.info h4 {
+  margin: 0 0 5px;
+  color: #777;
+}
+
+/* --------------------- HTML ------------------------------*/
+
+.navbar {
+  height: 60px;
+  display: flex;
+  /* justify-content: space-evenly; */
+
+  width: 100%;
+
+  background-color: #343a40 !important;
+  position: sticky; /*sticks to top if we scroll down*/
+}
+
+.logo {
+  width: 100px;
+  object-fit: contain;
+  margin: 0 10px;
+  margin-top: 7px;
+  margin-left: 10px;
+  height: auto;
+}
+
+.container {
+  margin-top: 10px;
+}
+.row {
+  width: 90%;
+
+  display: flex;
+}
+
+.navbar-text1 {
+  color: #fff;
+
+  font-size: 40px;
+  display: inline-block;
+  align-items: center;
+  width: 60%;
+}
+
+.navbar-text2 {
+  color: rgba(255, 255, 255, 0.5);
+  display: flex-end;
+  width: 10%;
+  padding-top: 0.7rem;
+  padding-bottom: 0.2rem;
+  padding-right: 0.5rem;
+
+  font-size: 25px;
+}
+
+body {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+}
+
+#map {
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  height: 380px;
+  width: 20%;
 }

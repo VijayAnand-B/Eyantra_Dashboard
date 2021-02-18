@@ -99,7 +99,7 @@ function refreshMap() {
             }
           );
           marker.bindPopup(jsonDataObject[j].City, {
-            autoClose: false,
+            autoClose: true,
           });
           map.addLayer(marker);
           marker.on("click", onClick_Marker);
@@ -147,18 +147,63 @@ function refreshMap() {
               return redIcon;
             }
           }
+
+          // var info = L.control();
+          // info.onAdd = function (map) {
+          //   this._div = L.DomUtil.create("div", "info"); // create a div with a class "info"
+          //   this.update();
+          //   return this._div;
+          // };
+
+          // function onClick_Marker(e) {
+          //   var marker = e.target;
+          //   // info.addTo(map);
+          //   popup = L.popup()
+          //     .setLatLng(marker.getLatLng())
+          //     .setContent(
+          //       "Order ID: " +
+          //         marker.myJsonData.OderID +
+          //         " || Item: " +
+          //         marker.myJsonData.Item
+          //     )
+          //     .openOn(map);
+
+          //   // var marker = e.target;
+
+          //   // method that we will use to update the control based on feature properties passed
+          //   info.update = function (marker) {
+          //     this._div.innerHTML = "<h4>Population Density</h4>";
+          //   };
+
+          //   info.update(marker);
+          // }
           function onClick_Marker(e) {
+            // info.onRemove(map);
+            var info = L.control();
+
+            info.onAdd = function (map) {
+              this._div = L.DomUtil.create("div", "info"); // create a div with a class "info"
+              this.update();
+              return this._div;
+            };
+
+            // method that we will use to update the control based on feature properties passed
+            info.update = function () {
+              this._div.innerHTML = "<h4>US Population Density</h4>";
+            };
+            info.addTo(map);
+
+            // function onClick_Marker(e) {
             var marker = e.target;
-            popup = L.popup()
-              .setLatLng(marker.getLatLng())
-              .setContent(
-                "Order ID: " +
-                  marker.myJsonData.OderID +
-                  " || Item: " +
-                  marker.myJsonData.Item
-              )
-              .openOn(map);
+            // info.onRemove(map);
+
+            info.update();
+            info.onRemove(map);
           }
+
+          // function resetHighlight(e) {
+          //   info.update();
+          // }
 
           L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
             attribution:
