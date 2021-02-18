@@ -8,6 +8,15 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
 }
+
+.graph_arr {
+  padding: 6px 8px;
+  font: 14px/16px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
 .info h4 {
   margin: 0 0 5px;
   color: #777;
@@ -38,13 +47,13 @@
   margin-top: 10px;
 }
 .row {
-  width: 90%;
+  width: 97%;
 
   display: flex;
 }
 
 .navbar-text1 {
-  color: #fff;
+  color: #f0f1f6;
   font-family: Lato, Lucida Grande, Lucida Sans Unicode, Tahoma, Sans-Serif;
 
   font-size: 35px;
@@ -79,21 +88,23 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff;
+  background-color: #f0f1f6;
 }
 
-.map {
+#map {
   margin-top: 30px;
   margin-left: 160px;
   height: 400px;
   width: 600px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.column_chart {
+#column_chart {
   margin-top: 30px;
   margin-left: 140px;
   height: 400px;
   width: 1000px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .table1 {

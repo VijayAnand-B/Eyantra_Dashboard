@@ -215,11 +215,11 @@ function refreshChart() {
       // Setting color for the coloumns of graph according to priority of items
       for (var j in jsonDataObject) {
         if (jsonDataObject[j].Priority == "HP") {
-          var color = "#FF0000";
+          var color = "#ec4646";
         } else if (jsonDataObject[j].Priority == "MP") {
-          var color = "#FFFF00";
+          var color = "#FFD700";
         } else if (jsonDataObject[j].Priority == "LP") {
-          var color = "#00FF00";
+          var color = "#21e6a3";
         }
         bar_color.push(color);
       }
