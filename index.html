@@ -31,21 +31,22 @@
     <div class="container">
         <div class="row">
             <h1 class="page-heading">Eyantra Dashboard</h1>
-            <input class="search" type="search" placeholder="search by OrderID">
-            <svg class="search_img" viewBox="0 0 16 16">
-                <path d="M6.57,1A5.57,5.57,0,1,1,1,6.57,5.57,5.57,0,0,1,6.57,1m0-1a6.57,6.57,0,1,0,6.57,6.57A6.57,6.57,0,0,0,6.57,0Z"></path><rect x="11.84" y="9.87" width="2" height="5.93" transform="translate(-5.32 12.84) rotate(-45)"></rect>
-            </svg>
+        
         </div>
             
         <span class="map_name">Map</span>
         <span class="time_taken">Time Taken to be Shipped</span>
         <div class="row">
-            <div id="map"></div>
+            <div class='custom-popup' id="map"></div>
             <span id="column_chart"></span>
         </div>
-
+        
         <div class="table">
             <span class="orders">Recent Orders</span>
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="search by OrderID">
+            <svg class="search_img" viewBox="0 0 16 16">
+                    <path d="M6.57,1A5.57,5.57,0,1,1,1,6.57,5.57,5.57,0,0,1,6.57,1m0-1a6.57,6.57,0,1,0,6.57,6.57A6.57,6.57,0,0,0,6.57,0Z"></path><rect x="11.84" y="9.87" width="2" height="5.93" transform="translate(-5.32 12.84) rotate(-45)"></rect>
+            </svg>
             <table class="table1 block" border='1'>
                 <tr>
                     <th>Order ID</th>

@@ -8,12 +8,35 @@ $(document).ready(function () {
   // Fetch the initial Chart
   refreshChart();
   // Fetch every 5 second
-  setInterval(refreshChart, 5000);
+  setInterval(refreshChart, 10000);
 
   // Fetch every 1 second
-  setInterval(refreshTable, 1000);
-  setInterval(refreshMap, 5000);
+  setInterval(refreshTable, 15000);
+  setInterval(refreshMap, 15000);
 });
+
+function myFunction() {
+    
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  console.log(input);
+  filter = input.value;
+  table = document.getElementById("tableContent");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+      } else {
+          tr[i].style.display = "none";
+      }
+      }
+  }
+}
 
 google.charts.load("current", { packages: ["corechart"] });
 google.charts.setOnLoadCallback(refreshChart);
@@ -22,7 +45,7 @@ function refreshTable() {
   // var trHTML = '';
 
   $.getJSON(
-    "https://spreadsheets.google.com/feeds/list/14PQ_c-u9KFF3aCm3LoCNs8qCKOw0OeqgZKgvQ9Gf2ZM/1/public/full?alt=json",
+    "https://spreadsheets.google.com/feeds/list/1vrtXk5zz1frm8qR_dUnEdoqJaxNv9NET9NJAcTCQduA/1/public/full?alt=json",
     function (data) {
       var trHTML = "";
 
@@ -67,11 +90,11 @@ function refreshMap() {
     container._leaflet_id = null;
   }
 
-  var map = L.map("map").setView([20.5937, 78.9629], 4);
+  var map = L.map("map").setView([20.5837, 78.9629], 4);
   var jsonDataObject = [];
 
   $.getJSON(
-    "https://spreadsheets.google.com/feeds/list/14PQ_c-u9KFF3aCm3LoCNs8qCKOw0OeqgZKgvQ9Gf2ZM/1/public/full?alt=json",
+    "https://spreadsheets.google.com/feeds/list/1vrtXk5zz1frm8qR_dUnEdoqJaxNv9NET9NJAcTCQduA/1/public/full?alt=json",
     function (data) {
       for (var i = 0; i < data.feed.entry.length; ++i) {
         var json_data = {
@@ -98,109 +121,65 @@ function refreshMap() {
               ),
             }
           );
-          // marker.bindPopup({
-          //   autoClose: true,
-          // });
+
+          var customPopup;
+          // specify popup options
+          var customOptions = { className: "custom-popup" };
+          marker.bindPopup(customPopup, customOptions, { autoClose: false });
           map.addLayer(marker);
           marker.on("click", onClick_Marker);
           // Attach the corresponding JSON data to your marker:
           marker.myJsonData = jsonDataObject[j];
-          function set_marker_color(dis_status, ship_status) {
-            var str1 =
-              "https://github.com/pointhi/leaflet-color-markers/blob/master/img/marker-icon-";
-            var str2 = ".png?raw=true";
-            var str3 = "";
 
-            if (dis_status == "YES" && ship_status == "YES") {
-              str3 = str1.concat("green", str2);
-            } else if (dis_status == "YES" && ship_status == "NO") {
-              str3 = str1.concat("yellow", str2);
-            } else {
-              str3 = str1.concat("red", str2);
-            }
-            var colorIcon = new L.Icon({
-              iconUrl: str3,
-              shadowUrl:
-                "https://github.com/pointhi/leaflet-color-markers/blob/master/img/marker-shadow.png?raw=true",
-              iconSize: [25, 41],
-              iconAnchor: [12, 41],
-              popupAnchor: [1, -34],
-              shadowSize: [41, 41],
-            });
-            return colorIcon;
-          }
-
-          // var info = L.control();
-          // info.onAdd = function (map) {
-          //   this._div = L.DomUtil.create("div", "info"); // create a div with a class "info"
-          //   this.update();
-          //   return this._div;
-          // };
-
-          // function onClick_Marker(e) {
-          //   var marker = e.target;
-          //   // info.addTo(map);
-          //   popup = L.popup()
-          //     .setLatLng(marker.getLatLng())
-          //     .setContent(
-          //       "Order ID: " +
-          //         marker.myJsonData.OderID +
-          //         " || Item: " +
-          //         marker.myJsonData.Item
-          //     )
-          //     .openOn(map);
-
-          //   // var marker = e.target;
-
-          //   // method that we will use to update the control based on feature properties passed
-          //   info.update = function (marker) {
-          //     this._div.innerHTML = "<h4>Population Density</h4>";
-          //   };
-
-          //   info.update(marker);
-          // }
           function onClick_Marker(e) {
-            // info.onRemove(map);
-            var info = L.control();
-
-            info.onAdd = function (map) {
-              this._div = L.DomUtil.create("div", "info"); // create a div with a class "info"
-              this.update();
-              return this._div;
-            };
-
-            // method that we will use to update the control based on feature properties passed
-            info.update = function () {
-              var marker = e.target;
-              this._div.innerHTML =
-                "<h4> " +
-                marker.myJsonData.City +
-                "</h4>" +
-                "Order ID : " +
-                marker.myJsonData.OderID +
-                "</b><br/>" +
-                "Item :  " +
-                marker.myJsonData.Item;
-            };
-            info.addTo(map);
-
-            // function onClick_Marker(e) {
-            // var marker = e.target;
-            // info.onRemove(map);
-
-            info.update();
-            info.onRemove();
+            var marker = e.target;
+            popup = L.popup()
+              .setLatLng({ lat: 24.077, lng: 101.5559 })
+              .setContent(
+                "<center>" +
+                  "<p>   " +
+                  marker.myJsonData.City +
+                  "</p>" +
+                  "Order ID :  " +
+                  marker.myJsonData.OderID + " " + " " +
+                  
+                  " Item : " +
+                  marker.myJsonData.Item +
+                  "</center>"
+              )
+              .openOn(map);
           }
-
-          // function resetHighlight(e) {
-          //   info.update();
-          // }
-
-          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-            attribution:
-              '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-          }).addTo(map);
         }
+
+        function set_marker_color(dis_status, ship_status) {
+          var str1 =
+            "https://github.com/pointhi/leaflet-color-markers/blob/master/img/marker-icon-";
+          var str2 = ".png?raw=true";
+          var str3 = "";
+
+          if (dis_status == "YES" && ship_status == "YES") {
+            str3 = str1.concat("green", str2);
+          } else if (dis_status == "YES" && ship_status == "NO") {
+            str3 = str1.concat("yellow", str2);
+          } else {
+            str3 = str1.concat("red", str2);
+          }
+          var colorIcon = new L.Icon({
+            iconUrl: str3,
+            shadowUrl:
+              "https://github.com/pointhi/leaflet-color-markers/blob/master/img/marker-shadow.png?raw=true",
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41],
+          });
+          return colorIcon;
+        }
+
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution:
+            '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+        }).addTo(map);
       }
     }
   );
@@ -211,7 +190,7 @@ function refreshChart() {
   var graph_arr = [["Order ID", "Time Taken", { role: "style" }]];
   var bar_color = [];
   $.getJSON(
-    "https://spreadsheets.google.com/feeds/list/14PQ_c-u9KFF3aCm3LoCNs8qCKOw0OeqgZKgvQ9Gf2ZM/1/public/full?alt=json",
+    "https://spreadsheets.google.com/feeds/list/1vrtXk5zz1frm8qR_dUnEdoqJaxNv9NET9NJAcTCQduA/1/public/full?alt=json",
     function (data) {
       for (var i = 0; i < data.feed.entry.length; ++i) {
         var json_data = {

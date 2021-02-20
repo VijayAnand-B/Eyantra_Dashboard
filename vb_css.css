@@ -1,37 +1,9 @@
-/* --------------------- JS script ------------------------------*/
-
-.info {
-  /* padding: 2px 2px; */
-  width: 150px;
-  font: 14px/16px Arial, Helvetica, sans-serif;
-  background: white;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-}
-
-.graph_arr {
-  padding: 6px 8px;
-  font: 14px/16px Arial, Helvetica, sans-serif;
-  background: white;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-}
-.info h4 {
-  margin: 0 0 10px;
-  color: #777;
-}
-
 /* --------------------- HTML ------------------------------*/
 
 .navbar {
   height: 60px;
   display: flex;
-  /* justify-content: space-evenly; */
-
   width: 100%;
-
   background-color: #e7e6e1 !important;
   position: sticky; /*sticks to top if we scroll down*/
 }
@@ -84,13 +56,13 @@ h1.page-heading {
   margin-top: 30px;
 
   font-size: 1.3em;
-  padding: 10px 0;
+  padding: 5px 0;
   margin-bottom: 1px;
   font-family: "Lato", "Helvetica Neue", Arial, Helvetica, sans-serif;
 
   width: 1000px;
   color: #474747;
-  border-bottom: 1px solid #ddd;
+  /* border-bottom: 1px solid #ddd; */
 }
 
 .row {
@@ -118,18 +90,14 @@ body {
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
-  color: #212529;
+  /* color: #212529; */
   text-align: left;
   background-color: #ffffff;
-  
-}
-.home_img{
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0)); 
 }
 
-.search {
+#myInput {
   margin-top: 50px;
-  margin-left: 850px;
+  margin-left: 1115px;
   height: 20%;
 
   line-height: 36px;
@@ -149,8 +117,8 @@ body {
 .search_img {
   width: 17px;
   position: absolute;
-  top: 124px;
-  right: 65px;
+  top: 740px;
+  right: 225px;
 }
 
 #map {
@@ -207,4 +175,26 @@ body {
   margin-top: 70px;
   margin-left: 10%;
   /* width: 1500px; */
+}
+
+/* --------------------- JS script ------------------------------*/
+
+.custom-popup .leaflet-popup-content-wrapper {
+  background: #21e6a3;
+  color: #474747;
+  font-size: 16px;
+  line-height: 10px;
+}
+
+.custom-popup .leaflet-popup-content-wrapper a {
+  color: rgba(255, 255, 255, 0.5);
+}
+.custom-popup .leaflet-popup-tip-container {
+  width: 25px;
+  height: 10px;
+}
+.custom-popup .leaflet-popup-tip {
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #2c3e50;
 }
