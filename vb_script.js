@@ -50,7 +50,6 @@ function refreshTable() {
       var trHTML = "";
 
       for (var i = 0; i < data.feed.entry.length; ++i) {
-        var myData_map, myData_order;
 
         trHTML +=
           "<tr><td>" +
