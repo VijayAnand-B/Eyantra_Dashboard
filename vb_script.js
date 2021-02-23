@@ -136,12 +136,12 @@ function refreshMap() {
               .setLatLng({ lat: 24.077, lng: 101.5559 })
               .setContent(
                 "<center>" +
-                  "<p>   " +
+                  "<p>" +
                   marker.myJsonData.City +
-                  "</p>" +
+                  "</p>" + "<p>" +
                   "Order ID :  " +
-                  marker.myJsonData.OderID + " " + " " +
-                  
+                  marker.myJsonData.OderID +
+                  "</p>" +
                   " Item : " +
                   marker.myJsonData.Item +
                   "</center>"
